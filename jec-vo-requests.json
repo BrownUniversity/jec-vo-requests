@@ -1,0 +1,41 @@
+{
+  "appName": "JEC VO Requests",
+  "baseUrl" : "https://api.atlassian.com",
+  "logLevel" : "INFO",
+  "globalArgs": [],
+  "globalFlags": {
+    "notificationEmail": "Sean_Broestl@brown.edu"
+  },
+  "actionMappings" : {
+    "create_gcp_project" : {
+        "sourceType" : "git",
+        "gitOptions" : {
+            "url" : "git@github.com:BrownUniversity/jec-vo-requests.git"
+        },
+        "filepath" : "scripts/create_gcp_project/create_gcp_project.sh",
+        "Stderr": "/tmp/create_gcp_project_jecErr.log",
+        "Stdout": "/tmp/create_gcp_project_jecOut.log"
+    },
+    "create_bcs_token": {
+        "sourceType" : "git",
+        "gitOptions" : {
+            "url" : "git@github.com:BrownUniversity/jec-vo-requests.git"
+        },
+        "filepath": "scripts/create_bcs_token.sh",
+        "Stderr": "/tmp/create_bcs_token_jecErr.log",
+        "Stdout": "/tmp/create_bcs_token_jecOut.log"
+    }
+  },
+  "pollerConf" : {
+    "pollingWaitIntervalInMillis" : 100,
+    "visibilityTimeoutInSeconds" : 30,
+    "maxNumberOfMessages" : 10
+  },
+  "poolConf" : {
+    "maxNumberOfWorker": 12,
+    "minNumberOfWorker": 4,
+    "queueSize" : 0,
+    "keepAliveTimeInMillis" : 6000,
+    "monitoringPeriodInMillis" : 15000
+  }
+}

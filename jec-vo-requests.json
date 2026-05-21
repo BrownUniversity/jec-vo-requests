@@ -24,6 +24,15 @@
         "filepath": "scripts/create_bcs_token.sh",
         "Stderr": "/tmp/create_bcs_token_jecErr.log",
         "Stdout": "/tmp/create_bcs_token_jecOut.log"
+    },
+    "test_action": {
+        "sourceType" : "git",
+        "gitOptions" : {
+            "url" : "https://github.com/BrownUniversity/jec-vo-requests.git"
+        },
+        "filepath": "scripts/boilerplate.py",
+        "Stderr": "/tmp/test_action_jecErr.log",
+        "Stdout": "/tmp/test_action_jecOut.log"
     }
   },
   "pollerConf" : {

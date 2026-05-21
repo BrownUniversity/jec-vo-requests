@@ -10,7 +10,7 @@
     "create_gcp_project" : {
         "sourceType" : "git",
         "gitOptions" : {
-            "url" : "git@github.com:BrownUniversity/jec-vo-requests.git"
+            "url" : "https://github.com/BrownUniversity/jec-vo-requests.git"
         },
         "filepath" : "scripts/create_gcp_project/create_gcp_project.sh",
         "Stderr": "/tmp/create_gcp_project_jecErr.log",
@@ -19,7 +19,7 @@
     "create_bcs_token": {
         "sourceType" : "git",
         "gitOptions" : {
-            "url" : "git@github.com:BrownUniversity/jec-vo-requests.git"
+            "url" : "https://github.com/BrownUniversity/jec-vo-requests.git"
         },
         "filepath": "scripts/create_bcs_token.sh",
         "Stderr": "/tmp/create_bcs_token_jecErr.log",

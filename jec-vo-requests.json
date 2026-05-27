@@ -13,8 +13,8 @@
             "url" : "https://github.com/BrownUniversity/jec-vo-requests.git"
         },
         "filepath" : "scripts/create_gcp_project/create_gcp_project.sh",
-        "Stderr": "/tmp/create_gcp_project_jecErr.log",
-        "Stdout": "/tmp/create_gcp_project_jecOut.log"
+        "Stderr": "logs/create_gcp_project_jecErr.log",
+        "Stdout": "logs/create_gcp_project_jecOut.log"
     },
     "create_bcs_token": {
         "sourceType" : "git",
@@ -22,8 +22,8 @@
             "url" : "https://github.com/BrownUniversity/jec-vo-requests.git"
         },
         "filepath": "scripts/create_bcs_token.sh",
-        "Stderr": "/tmp/create_bcs_token_jecErr.log",
-        "Stdout": "/tmp/create_bcs_token_jecOut.log"
+        "Stderr": "logs/create_bcs_token_jecErr.log",
+        "Stdout": "logs/create_bcs_token_jecOut.log"
     },
     "test_action": {
         "sourceType" : "git",
@@ -31,8 +31,8 @@
             "url" : "https://github.com/BrownUniversity/jec-vo-requests.git"
         },
         "filepath": "scripts/boilerplate.py",
-        "Stderr": "/tmp/test_action_jecErr.log",
-        "Stdout": "/tmp/test_action_jecOut.log"
+        "Stderr": "logs/test_action_jecErr.log",
+        "Stdout": "logs/test_action_jecOut.log"
     }
   },
   "pollerConf" : {

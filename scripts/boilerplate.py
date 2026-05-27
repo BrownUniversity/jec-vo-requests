@@ -12,6 +12,10 @@ import logging
 import os
 
 def main():
+    logging.basicConfig(
+    level=logging.INFO,
+    stream=sys.stdout
+    )
     # Initialize argument parser and dictionary-ize arguments
     parser = argparse.ArgumentParser()
     parser.add_argument('-payload', help='Payload from queue', required=True)
@@ -22,11 +26,14 @@ def main():
     args, unknown = parser.parse_known_args()
     args = vars(args)
 
+    print(f"Received payload: {args['payload']}")
+    print(f"Received namedPipe: {args['jecNamedPipe']}")
     if 'jecNamedPipe' in args:
         payload = json.loads(args['payload'])
         try:
             with open(args['jecNamedPipe'], 'w', encoding="utf-8") as pipe:
                 pipe.write(json.dumps(payload))
+                print("Payload written to named pipe successfully.")
                 logging.info(f"Message written to named pipe at {args['jecNamedPipe']}")
         except Exception as e:
             logging.error(f"Error writing to named pipe {args['jecNamedPipe']} with exception: {e}")

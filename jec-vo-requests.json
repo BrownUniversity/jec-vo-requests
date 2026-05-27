@@ -1,7 +1,7 @@
 {
   "appName": "JEC VO Requests",
   "baseUrl" : "https://api.atlassian.com",
-  "logLevel" : "INFO",
+  "logLevel" : "DEBUG",
   "globalArgs": [],
   "globalFlags": {
     "notificationEmail": "Sean_Broestl@brown.edu"

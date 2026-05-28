@@ -31,8 +31,8 @@
             "url" : "https://github.com/BrownUniversity/jec-vo-requests.git"
         },
         "filepath": "scripts/boilerplate.py",
-        "Stderr": "logs/test_action_jecErr.log",
-        "Stdout": "logs/test_action_jecOut.log"
+        "Stderr": "/tmp/action_logs/test_action_jecErr.log",
+        "Stdout": "/tmp/action_logs/test_action_jecOut.log"
     }
   },
   "pollerConf" : {

@@ -30,8 +30,7 @@
         "gitOptions" : {
             "url" : "https://github.com/BrownUniversity/jec-vo-requests.git"
         },
-        "filepath": "uv",
-        "args": ["run", "scripts/boilerplate.py"],
+        "filepath": "scripts/boilerplate.py",
         "Stderr": "logs/test_action_jecErr.log",
         "Stdout": "logs/test_action_jecOut.log"
     }

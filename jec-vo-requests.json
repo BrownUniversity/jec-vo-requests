@@ -41,8 +41,8 @@
     "maxNumberOfMessages" : 10
   },
   "poolConf" : {
-    "maxNumberOfWorker": 12,
-    "minNumberOfWorker": 4,
+    "maxNumberOfWorker": 1,
+    "minNumberOfWorker": 1,
     "queueSize" : 0,
     "keepAliveTimeInMillis" : 6000,
     "monitoringPeriodInMillis" : 15000

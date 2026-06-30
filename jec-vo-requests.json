@@ -12,7 +12,7 @@
         "gitOptions" : {
             "url" : "https://github.com/BrownUniversity/jec-vo-requests.git"
         },
-        "filepath" : "scripts/create_gcp_project/create_gcp_project.sh",
+        "filepath" : "scripts/create_gcp_project/create_gcp_project.py",
         "Stderr": "logs/create_gcp_project_jecErr.log",
         "Stdout": "logs/create_gcp_project_jecOut.log"
     },

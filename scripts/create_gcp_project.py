@@ -15,7 +15,7 @@ import requests
 import datetime
 from google.cloud import resourcemanager_v3
 from google.cloud.resourcemanager_v3 import types
-#from bcs_functions import create_bcs_api_token, get_bcs_department_id, create_bcs_token, add_bcs_project, add_bcs_project_budget, get_bcs_project_budgets
+import google.auth
 
 def main():
     # Initialize argument parser and dictionary-ize arguments
@@ -30,7 +30,9 @@ def main():
 
     if 'GOOGLE_APPLICATION_CREDENTIALS' not in os.environ:
         logging.error("GOOGLE_APPLICATION_CREDENTIALS environment variable not set")
+        print("GOOGLE_APPLICATION_CREDENTIALS environment variable not set")
         sys.exit(1)
+    credentials = google.auth.default()
     org_client = resourcemanager_v3.OrganizationsClient()
     org_search = resourcemanager_v3.SearchOrganizationsRequest()
     org_id = next(iter(org_client.search_organizations(request=org_search), None)).name

@@ -9,6 +9,9 @@ import json
 import sys
 import logging
 import os
+from google.cloud import resourcemanager_v3
+from google.cloud.resourcemanager_v3 import types
+
 
 def main():
     # Initialize argument parser and dictionary-ize arguments
@@ -26,6 +29,8 @@ def main():
     print(f"GOOGLE_APPLICATION_CREDENTIALS: {os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')}")
     gcp_creds = json.loads(open(os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')).read())
     print(f"GCP Credentials: {gcp_creds}")
+    client = resourcemanager_v3.ProjectsClient()
+    print(f"Resource Manager client initialized: {client}")
     if 'jecNamedPipe' in args:
         payload = json.loads(args['payload'])
         try:

@@ -45,7 +45,8 @@ def main():
     payload = json.loads(args['payload'])
 
     client = resourcemanager_v3.ProjectsClient()
-    derived_project_id = f'{payload["requestor"].split(" ")[1]}{payload["project_short_name"]}-{payload["request_id"]}'
+    print(f"Requestor: {payload['requestor']}")
+    derived_project_id = f'{payload["project_short_name"]}-{payload["request_id"]}'
     target_folder = org_id
     
     cloud_use_case = payload["cloud_use_case"].lower()

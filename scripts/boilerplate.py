@@ -23,6 +23,7 @@ def main():
 
     print(f"Received payload: {args['payload']}")
     print(f"Received namedPipe: {args['jecNamedPipe']}")
+    print(f"GOOGLE_APPLICATION_CREDENTIALS: {os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')}")
     if 'jecNamedPipe' in args:
         payload = json.loads(args['payload'])
         try:

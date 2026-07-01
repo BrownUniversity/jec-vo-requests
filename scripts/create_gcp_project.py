@@ -32,6 +32,7 @@ def main():
         logging.error("GOOGLE_APPLICATION_CREDENTIALS environment variable not set")
         print("GOOGLE_APPLICATION_CREDENTIALS environment variable not set")
         sys.exit(1)
+    print(f"GOOGLE_APPLICATION_CREDENTIALS environment variable is set to: {os.environ['GOOGLE_APPLICATION_CREDENTIALS']}")
     credentials = google.auth.default()
     org_client = resourcemanager_v3.OrganizationsClient()
     org_search = resourcemanager_v3.SearchOrganizationsRequest()

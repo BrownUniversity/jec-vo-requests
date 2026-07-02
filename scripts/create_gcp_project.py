@@ -35,9 +35,6 @@ def main():
         sys.exit(1)
     print(f"GOOGLE_APPLICATION_CREDENTIALS environment variable is set to: {os.environ['GOOGLE_APPLICATION_CREDENTIALS']}")
     credentials = google.auth.default()
-    org_client = resourcemanager_v3.OrganizationsClient()
-    org_search = resourcemanager_v3.SearchOrganizationsRequest()
-    org_id = next(iter(org_client.search_organizations(request=org_search)), None).name
 
     # Initialize logging
     logging.basicConfig(stream=sys.stdout, level=args['logLevel'])

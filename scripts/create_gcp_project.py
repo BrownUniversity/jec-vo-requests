@@ -52,7 +52,7 @@ def main():
     else:
         requestor = "brown"
     derived_project_id = f'{requestor}-{payload["project_short_name"]}-{payload["request_id"]}'
-    target_folder = org_id
+    target_folder = f"organizations/{os.environ['GCP_ORG_ID']}"
     
     cloud_use_case = payload["cloud_use_case"].lower()
     if cloud_use_case == "departmental":
@@ -62,9 +62,6 @@ def main():
         target_folder = next(folder_response, None)
         if target_folder is not None:
             target_folder = target_folder.name
-        else:
-            logging.warning(f"Folder with displayName={payload['brown_department']} not found, using org_id as parent folder")
-            target_folder = org_id
   
     project = types.Project(
         display_name=payload['project_name'],

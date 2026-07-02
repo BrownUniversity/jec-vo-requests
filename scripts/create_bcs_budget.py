@@ -101,3 +101,23 @@ def main():
     bcs_token = os.environ.get('BCS_TOKEN')
     if bcs_username and bcs_password:
         bcs_token = create_bcs_api_token(bcs_username, bcs_password)
+    
+    group_name_lookup = {
+        'CCV': ('CCV Research Pilots','Unaffiliated CCV Research Pilots'),
+        'OIT': ('Brown University','Unaffiliated Projects'),
+        'Computer Science': ('Computer Science','Unaffiliated Computer Science')
+    }
+    group_name = group_name_lookup.get(payload['group_name'])[0]
+    department_name = group_name_lookup.get(payload['group_name'])[1]
+
+    try:
+        department_id = get_bcs_department_id(bcs_token, group_name, department_name)
+        add_bcs_project(token=bcs_token, project_id=response.project_id,
+                        department_id=department_id)
+        budget = add_bcs_project_budget(token=bcs_token, project_id=response.project_id,
+                    amount=1, billingaccountid=payload['billing_account_id'],
+                    expirationdate="2026-02-18",
+                    ponumber=payload['po_number'],
+                    recurring=False, state="Active")
+    except Exception as e:
+        logging.error(f"Error adding project or budget to BCS: {e}")

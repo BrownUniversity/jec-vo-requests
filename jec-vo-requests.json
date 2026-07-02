@@ -6,6 +6,11 @@
   "globalFlags": {
     "notificationEmail": "Sean_Broestl@brown.edu"
   },
+  "globalEnv": [
+    "GOOGLE_APPLICATION_CREDENTIALS=/mnt/google-credentials",
+    "UV_CACHE_DIR=/tmp/uv-cache",
+    "PATH=$PATH:/usr/local/bin:/usr/bin:/bin"
+  ],
   "actionMappings" : {
     "create_gcp_project" : {
         "sourceType" : "git",
@@ -30,7 +35,11 @@
         "gitOptions" : {
             "url" : "https://github.com/BrownUniversity/jec-vo-requests.git"
         },
-        "filepath": "scripts/boilerplate.sh",
+        "args":
+        [
+          "boilerplate.py"
+        ],
+        "filepath": "scripts/uv_wrapper.sh",
         "Stderr": "/tmp/action_logs/test_action_jecErr.log",
         "Stdout": "/tmp/action_logs/test_action_jecOut.log"
     }

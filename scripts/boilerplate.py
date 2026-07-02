@@ -1,7 +1,9 @@
-#/// script
-# requires-python = ">=3.9"
-# dependencies = ["google-cloud-resource-manager>=1.14.2"]
-#///
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "google-cloud-resource-manager",
+# ]
+# ///
 
 import argparse
 import json
@@ -27,6 +29,7 @@ def main():
     print(f"Received namedPipe: {args['jecNamedPipe']}")
     print(f"GOOGLE_APPLICATION_CREDENTIALS: {os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')}")
     gcp_creds = json.loads(open(os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')).read())
+    
     print(f"GCP Credentials: {gcp_creds}")
     client = resourcemanager_v3.ProjectsClient()
     print(f"Resource Manager client initialized: {client}")

@@ -3,9 +3,7 @@
   "baseUrl" : "https://api.atlassian.com",
   "logLevel" : "INFO",
   "globalArgs": [],
-  "globalFlags": {
-    "notificationEmail": "Sean_Broestl@brown.edu"
-  },
+  "globalFlags": {},
   "globalEnv": [
     "GOOGLE_APPLICATION_CREDENTIALS=/mnt/google-credentials",
     "UV_CACHE_DIR=/tmp/uv-cache",
@@ -27,6 +25,9 @@
             "url" : "https://github.com/BrownUniversity/jec-vo-requests.git"
         },
         "filepath": "scripts/uv_wrapper.sh",
+        "actionArgs": [
+          "scripts/boilerplate.py"
+        ],
         "Stderr": "/tmp/action_logs/test_action_jecErr.log",
         "Stdout": "/tmp/action_logs/test_action_jecOut.log"
     }

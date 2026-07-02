@@ -1,7 +1,8 @@
-#!/usr/bin/env -S uv run --script
 # /// script
-# requires-python = ">=3.9"
-# dependencies = ["google-cloud-resource-manager>=1.14.2"]
+# requires-python = ">=3.11"
+# dependencies = [
+#     "google-cloud-resource-manager",
+# ]
 # ///
 
 import argparse
@@ -46,7 +47,11 @@ def main():
 
     client = resourcemanager_v3.ProjectsClient()
     print(f"Requestor: {payload['requestor']}")
-    derived_project_id = f'{payload["project_short_name"]}-{payload["request_id"]}'
+    if "@" in payload['requestor'] and "_" in payload['requestor']:
+        requestor = payload['requestor'].split("@")[0].split("_")[-1]
+    else:
+        requestor = "brown"
+    derived_project_id = f'{requestor}-{payload["project_short_name"]}-{payload["request_id"]}'
     target_folder = org_id
     
     cloud_use_case = payload["cloud_use_case"].lower()
